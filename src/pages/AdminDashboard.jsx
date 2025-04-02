@@ -2,7 +2,6 @@ import { useState } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
 } from 'recharts';
-import randGold from '../assets/rand.png'; // Bildpfad für goldenen Rahmen
 
 const dummySales = {
   day: [
@@ -71,13 +70,7 @@ export default function AdminDashboard() {
 
       <div className="relative z-10 w-full max-w-5xl">
         <div className="relative">
-          {/* Goldrahmen + Shine */}
-          <div className="absolute inset-0 pointer-events-none rounded-[30px] overflow-hidden z-0">
-            <img src={randGold} alt="Goldrand" className="w-full h-full object-cover opacity-60" />
-            <div className="absolute inset-0 rounded-[30px] border-4 border-yellow-400 shadow-[0_0_35px_rgba(255,215,0,0.7)]"></div>
-          </div>
-
-          <div className="relative bg-white/80 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border border-transparent z-10">
+          <div className="relative bg-white/80 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border-4 border-yellow-400 shadow-[0_0_35px_rgba(255,215,0,0.7)]">
             <div className="space-y-6 border-b-4 border-[#b87333] pb-6">
               <h1 className="text-3xl font-bold text-center text-pink-700 drop-shadow">📊 Umsatzübersicht</h1>
 
