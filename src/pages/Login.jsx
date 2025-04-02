@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import warehouseIllustration from '../assets/warehouse-illustration.png'; // Hintergrundbild
-
+import regaleImage from '../assets/Regale.png'; // Regale mit Takis, Lollis, Fanta
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -29,6 +29,13 @@ export default function Login({ onLogin }) {
         src={warehouseIllustration}
         alt="Warehouse Illustration"
         className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none z-0"
+      />
+
+      {/* Linkes Bild (Regale) */}
+      <img
+        src={regaleImage}
+        alt="Süßwaren Regale"
+        className="absolute left-[-3%] bottom-0 w-[55%] object-contain opacity-40 pointer-events-none z-0 hidden md:block"
       />
 
       {/* Login-Box */}
@@ -67,9 +74,9 @@ export default function Login({ onLogin }) {
           />
           <button
             type="submit"
-            className="w-4/5 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-full transition shadow-md"
+            className="w-4/5 bg-gradient-to-r from-pink-400 via-pink-500 to-pink-400 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 rounded-full shadow-lg transition-transform transform hover:scale-105 ring-2 ring-pink-200 ring-offset-2"
           >
-            Einloggen
+            🍭 Einloggen
           </button>
         </div>
       </form>
