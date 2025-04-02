@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-import warehouseIllustration from '../assets/warehouse-illustration.png'; // Neues Bild als Hintergrund
+import warehouseIllustration from '../assets/warehouse-illustration.png'; // Hintergrundbild
+import regaleImage from '../assets/Regale.png'; // Regale mit Takis, Lollis, Fanta
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -22,24 +23,31 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div
-      className="min-h-screen bg-[#FFE1FF] font-baloo flex items-center justify-center px-4 relative overflow-hidden"
-      style={{ position: 'relative' }}
-    >
+    <div className="min-h-screen flex items-center justify-center bg-[#FFE1FF] font-baloo relative overflow-hidden px-4">
       {/* Hintergrundbild */}
       <img
         src={warehouseIllustration}
         alt="Warehouse Illustration"
-        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none z-0"
       />
 
-      {/* Loginbox */}
-      <div className="bg-white rounded-2xl shadow-lg max-w-md w-full relative z-10 p-8 text-center">
+      {/* Linkes Bild (Regale) */}
+      <img
+        src={regaleImage}
+        alt="Süßwaren Regale"
+        className="absolute left-0 bottom-0 w-1/3 max-w-[300px] z-0 opacity-80 hidden md:block"
+      />
+
+      {/* Login-Box */}
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md z-10 text-center relative"
+      >
         <div className="flex justify-center mb-4">
           <img
             src="https://kingcandy-shop.de/wp-content/uploads/2020/11/logo.svg"
             alt="KingCandy Logo"
-            className="h-14 max-w-[160px]"
+            className="h-14 max-w-[140px]"
           />
         </div>
 
@@ -71,7 +79,7 @@ export default function Login({ onLogin }) {
             Einloggen
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
