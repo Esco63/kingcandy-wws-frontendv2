@@ -60,7 +60,7 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-[#FFE1FF] font-baloo flex flex-col items-center justify-start py-10 px-4 relative overflow-hidden">
       {/* Shine hinter Logo, kleiner & weiter unten */}
-      <div className="absolute top-[72px] left-1/2 -translate-x-1/2 w-[180px] h-[180px] bg-gradient-to-br from-purple-400 via-fuchsia-500 to-yellow-300 rounded-full blur-2xl opacity-25 animate-pulse z-0"></div>
+      <div className="absolute top-[72px] left-1/2 -translate-x-1/2 w-[180px] h-[180px] bg-gradient-to-br from-purple-400 via-fuchsia-500 to-yellow-300 rounded-full blur-2xl opacity-25 animate-[pulse_4s_ease-in-out_infinite] z-0"></div>
 
       <img
         src="https://kingcandy-shop.de/wp-content/uploads/2020/11/logo.svg"
