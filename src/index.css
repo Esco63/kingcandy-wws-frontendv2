@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  margin: 0;
-  font-family: 'Baloo 2', cursive;
-  background-color: #FFE1FF;
+  @apply bg-[#FFE1FF] font-baloo;
 }
