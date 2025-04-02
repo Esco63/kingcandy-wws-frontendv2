@@ -61,7 +61,6 @@ export default function AdminDashboard() {
     <div className="p-6 space-y-8">
       <h1 className="text-2xl font-bold text-pink-700">📊 Umsatzübersicht</h1>
 
-      {/* Auswahl */}
       <div className="space-x-2">
         {['day', 'week', 'month', 'quarter', 'year'].map((key) => (
           <button
@@ -74,7 +73,6 @@ export default function AdminDashboard() {
         ))}
       </div>
 
-      {/* Chart */}
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={dummySales[range]}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -85,7 +83,6 @@ export default function AdminDashboard() {
         </LineChart>
       </ResponsiveContainer>
 
-      {/* Top Artikel */}
       <div>
         <h2 className="text-xl font-semibold mb-2">⭐ Top Artikel</h2>
         <ul className="space-y-1">
@@ -98,7 +95,6 @@ export default function AdminDashboard() {
         </ul>
       </div>
 
-      {/* Produktstatus */}
       <div>
         <h2 className="text-xl font-semibold mb-2">📦 Produktinfos</h2>
         <ul className="space-y-2">
