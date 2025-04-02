@@ -59,17 +59,17 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-[#FFE1FF] font-baloo flex flex-col items-center justify-start py-10 px-4 relative overflow-hidden">
-      {/* Hintergrundglanz fürs Logo */}
-      <div className="absolute top-8 z-0 w-64 h-64 bg-gradient-to-br from-purple-400 via-fuchsia-500 to-yellow-300 rounded-full blur-3xl opacity-40 animate-pulse"></div>
+      {/* Hintergrundglanz für das gesamte Layout */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-gradient-to-br from-purple-400 via-fuchsia-500 to-yellow-300 rounded-full blur-3xl opacity-30 animate-pulse z-0"></div>
 
       <img
         src="https://kingcandy-shop.de/wp-content/uploads/2020/11/logo.svg"
         alt="KingCandy Logo"
-        className="h-20 mb-8 animate-pulse drop-shadow-[0_0_15px_rgba(168,85,247,0.7)] z-10"
+        className="h-24 mb-8 drop-shadow-[0_0_20px_rgba(168,85,247,0.8)] z-10"
       />
 
-      <div className="bg-white/70 rounded-3xl shadow-2xl p-6 w-full max-w-5xl space-y-12 backdrop-blur-xl z-10">
-        <div className="space-y-6">
+      <div className="bg-white/60 rounded-3xl shadow-2xl p-6 w-full max-w-5xl space-y-16 backdrop-blur-lg z-10">
+        <div className="space-y-6 border-b-[16px] border-[#6b3e26] rounded-b-[100%]">
           <h1 className="text-3xl font-bold text-center text-pink-700 drop-shadow">📊 Umsatzübersicht</h1>
 
           <div className="flex justify-center gap-2 flex-wrap">
@@ -95,7 +95,7 @@ export default function AdminDashboard() {
           </ResponsiveContainer>
         </div>
 
-        <div className="border-t border-pink-200 pt-6 space-y-4">
+        <div className="space-y-4 border-b-[16px] border-[#6b3e26] rounded-b-[100%] pb-8">
           <h2 className="text-xl font-semibold text-pink-700 text-center">⭐ Top Artikel</h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {topArticles.map((item, idx) => (
@@ -107,7 +107,7 @@ export default function AdminDashboard() {
           </ul>
         </div>
 
-        <div className="border-t border-pink-200 pt-6 space-y-4">
+        <div className="space-y-4">
           <h2 className="text-xl font-semibold text-pink-700 text-center">📦 Produktinfos</h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {productInfo.map((prod, idx) => (
