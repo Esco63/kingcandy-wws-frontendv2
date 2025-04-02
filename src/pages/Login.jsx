@@ -31,10 +31,10 @@ export default function Login({ onLogin }) {
         className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none z-0"
       />
 
-      {/* Login-Box */}
+       {/* Login-Box */}
       <form
         onSubmit={handleSubmit}
-        className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-lg w-full max-w-md z-10 text-center relative"
+        className="bg-white/50 backdrop-blur-md p-8 rounded-2xl shadow-lg w-full max-w-md z-10 text-center relative"
       >
         <div className="flex justify-center mb-4">
           <img
