@@ -73,7 +73,7 @@ export default function AdminDashboard() {
           {/* Sanfter Gold Shine Animation um Rahmen */}
           <div className="absolute -inset-[2px] rounded-[30px] bg-gradient-to-tr from-yellow-300 via-yellow-100 to-yellow-300 blur-lg opacity-20 animate-pulse z-0"></div>
 
-          <div className="relative bg-white/90 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border-4 border-yellow-400">
+          <div className="relative bg-white/70 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border-4 border-yellow-400">
             <div className="space-y-6 border-b-4 border-[#b87333] pb-6">
               <h1 className="text-3xl font-bold text-center text-pink-700 drop-shadow">📊 Umsatzübersicht</h1>
 
