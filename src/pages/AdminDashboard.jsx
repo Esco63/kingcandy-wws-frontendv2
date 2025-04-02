@@ -60,8 +60,8 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-[#FFE1FF] font-baloo flex flex-col items-center justify-start py-10 px-4 relative overflow-hidden">
-      {/* Shine nur hinter Logo */}
-      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-gradient-to-br from-purple-400 via-fuchsia-500 to-yellow-300 rounded-full blur-3xl opacity-30 animate-pulse z-0"></div>
+      {/* Shine hinter Logo UND ZURÜCKGESCHOBEN */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[250px] h-[250px] bg-gradient-to-br from-purple-400 via-fuchsia-500 to-yellow-300 rounded-full blur-3xl opacity-30 animate-pulse z-0"></div>
 
       <img
         src="https://kingcandy-shop.de/wp-content/uploads/2020/11/logo.svg"
@@ -71,8 +71,10 @@ export default function AdminDashboard() {
 
       <div className="relative z-10 w-full max-w-5xl">
         <div className="relative">
+          {/* Goldrahmen + Shine */}
           <div className="absolute inset-0 pointer-events-none rounded-[30px] overflow-hidden z-0">
-            <img src={randGold} alt="Goldrand" className="w-full h-full object-cover opacity-60" />
+            <img src={randGold} alt="Goldrand" className="w-full h-full object-cover opacity-70" />
+            <div className="absolute inset-0 rounded-[30px] border-4 border-yellow-400 shadow-[0_0_25px_rgba(255,215,0,0.8)]"></div>
           </div>
 
           <div className="relative bg-white/70 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border border-transparent z-10">
