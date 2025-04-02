@@ -35,7 +35,7 @@ export default function Login({ onLogin }) {
       <img
         src={regaleImage}
         alt="Süßwaren Regale"
-        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0 hidden md:block"
+        className="absolute left-[-5%] bottom-0 w-1/3 max-w-[300px] object-contain opacity-40 pointer-events-none z-0 hidden md:block"
       />
 
       {/* Login-Box */}
