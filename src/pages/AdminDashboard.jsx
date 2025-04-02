@@ -59,8 +59,8 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-[#FFE1FF] font-baloo flex flex-col items-center justify-start py-10 px-4 relative overflow-hidden">
-      {/* Shine hinter Container statt oben */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[450px] h-[450px] bg-gradient-to-br from-purple-400 via-fuchsia-500 to-yellow-300 rounded-full blur-3xl opacity-30 animate-pulse z-0"></div>
+      {/* Shine nur hinter Logo */}
+      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-gradient-to-br from-purple-400 via-fuchsia-500 to-yellow-300 rounded-full blur-3xl opacity-30 animate-pulse z-0"></div>
 
       <img
         src="https://kingcandy-shop.de/wp-content/uploads/2020/11/logo.svg"
@@ -99,7 +99,7 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-semibold text-pink-700 text-center">⭐ Top Artikel</h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {topArticles.map((item, idx) => (
-              <li key={idx} className="bg-white/80 p-4 rounded-xl shadow flex justify-between items-center border border-pink-100">
+              <li key={idx} className="bg-white p-4 rounded-xl shadow flex justify-between items-center border border-pink-100">
                 <span>{item.name}</span>
                 <span className="font-bold text-pink-600">{item.sold} verkauft</span>
               </li>
