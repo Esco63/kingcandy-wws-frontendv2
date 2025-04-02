@@ -70,7 +70,10 @@ export default function AdminDashboard() {
 
       <div className="relative z-10 w-full max-w-5xl">
         <div className="relative">
-          <div className="relative bg-white/80 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border-4 border-yellow-400 shadow-[0_0_35px_rgba(255,215,0,0.7)]">
+          {/* Gold Shine Animation um Rahmen */}
+          <div className="absolute -inset-1 rounded-[30px] bg-gradient-to-tr from-yellow-400 via-yellow-200 to-yellow-400 blur-xl opacity-30 animate-pulse z-0"></div>
+
+          <div className="relative bg-white/80 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border-4 border-yellow-400">
             <div className="space-y-6 border-b-4 border-[#b87333] pb-6">
               <h1 className="text-3xl font-bold text-center text-pink-700 drop-shadow">📊 Umsatzübersicht</h1>
 
