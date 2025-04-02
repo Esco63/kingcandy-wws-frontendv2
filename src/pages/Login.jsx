@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import loginIllustration from '../assets/login-illustration.png'; // Bild lokal einbinden, optional
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -23,15 +24,24 @@ export default function Login({ onLogin }) {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FFE1FF] font-baloo">
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md text-center">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-4">
           <img
             src="https://kingcandy-shop.de/wp-content/uploads/2020/11/logo.svg"
             alt="KingCandy Logo"
-            className="h-12 max-w-[160px]"
+            className="h-14 max-w-[160px]"
           />
         </div>
-        <h2 className="text-2xl font-extrabold text-pink-700 mb-6">Willkommen zurück 🍬</h2>
+
+        <h2 className="text-2xl font-extrabold text-pink-700 mb-4">Willkommen zurück 🍬</h2>
+
+        <img
+          src="/login-illustration.png"
+          alt="Login Illustration"
+          className="w-full h-auto rounded-xl shadow mb-4"
+        />
+
         {error && <p className="mb-4 text-sm text-red-600">{error}</p>}
+
         <div className="flex flex-col items-center">
           <input
             type="text"
