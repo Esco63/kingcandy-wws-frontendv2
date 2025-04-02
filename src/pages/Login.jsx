@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import warehouseIllustration from '../assets/warehouse-illustration.png'; // Hintergrundbild
-import regaleImage from '../assets/Regale.png'; // Regale mit Takis, Lollis, Fanta
+
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -31,12 +31,6 @@ export default function Login({ onLogin }) {
         className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none z-0"
       />
 
-      {/* Linkes Bild (Regale) */}
-      <img
-        src={regaleImage}
-        alt="Süßwaren Regale"
-        className="absolute left-[-7%] bottom-0 w-[90%] object-contain opacity-40 pointer-events-none z-0 hidden md:block"
-      />
 
       {/* Login-Box */}
       <form
