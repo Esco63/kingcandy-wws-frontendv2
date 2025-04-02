@@ -70,60 +70,64 @@ export default function AdminDashboard() {
       />
 
       <div className="relative z-10 w-full max-w-5xl">
-        <img src={randGold} alt="Goldrand" className="absolute inset-0 w-full h-full object-cover rounded-[30px] pointer-events-none opacity-90" />
+        <div className="relative">
+          <div className="absolute inset-0 pointer-events-none rounded-[30px] overflow-hidden z-0">
+            <img src={randGold} alt="Goldrand" className="w-full h-full object-cover opacity-60" />
+          </div>
 
-        <div className="relative bg-white/70 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border border-transparent">
-          <div className="space-y-6 border-b-4 border-[#b87333] pb-6">
-            <h1 className="text-3xl font-bold text-center text-pink-700 drop-shadow">📊 Umsatzübersicht</h1>
+          <div className="relative bg-white/70 rounded-[30px] shadow-xl p-6 space-y-16 backdrop-blur-xl border border-transparent z-10">
+            <div className="space-y-6 border-b-4 border-[#b87333] pb-6">
+              <h1 className="text-3xl font-bold text-center text-pink-700 drop-shadow">📊 Umsatzübersicht</h1>
 
-            <div className="flex justify-center gap-2 flex-wrap">
-              {['day', 'week', 'month', 'quarter', 'year'].map((key) => (
-                <button
-                  key={key}
-                  onClick={() => setRange(key)}
-                  className={`px-4 py-1 rounded-full text-sm font-semibold shadow transition duration-200 ${range === key ? 'bg-pink-500 text-white' : 'bg-white text-pink-700 border border-pink-300 hover:bg-pink-100'}`}
-                >
-                  {key.toUpperCase()}
-                </button>
-              ))}
+              <div className="flex justify-center gap-2 flex-wrap">
+                {['day', 'week', 'month', 'quarter', 'year'].map((key) => (
+                  <button
+                    key={key}
+                    onClick={() => setRange(key)}
+                    className={`px-4 py-1 rounded-full text-sm font-semibold shadow transition duration-200 ${range === key ? 'bg-pink-500 text-white' : 'bg-white text-pink-700 border border-pink-300 hover:bg-pink-100'}`}
+                  >
+                    {key.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={dummySales[range]}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Line type="monotone" dataKey="value" stroke="#ec4899" strokeWidth={3} dot={{ r: 4 }} />
+                </LineChart>
+              </ResponsiveContainer>
             </div>
 
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={dummySales[range]}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Line type="monotone" dataKey="value" stroke="#ec4899" strokeWidth={3} dot={{ r: 4 }} />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
+            <div className="space-y-4 border-b-4 border-[#b87333] pb-6">
+              <h2 className="text-xl font-semibold text-pink-700 text-center">⭐ Top Artikel</h2>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {topArticles.map((item, idx) => (
+                  <li key={idx} className="bg-white p-4 rounded-xl shadow flex justify-between items-center border border-pink-100">
+                    <span>{item.name}</span>
+                    <span className="font-bold text-pink-600">{item.sold} verkauft</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="space-y-4 border-b-4 border-[#b87333] pb-6">
-            <h2 className="text-xl font-semibold text-pink-700 text-center">⭐ Top Artikel</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {topArticles.map((item, idx) => (
-                <li key={idx} className="bg-white p-4 rounded-xl shadow flex justify-between items-center border border-pink-100">
-                  <span>{item.name}</span>
-                  <span className="font-bold text-pink-600">{item.sold} verkauft</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold text-pink-700 text-center">📦 Produktinfos</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {productInfo.map((prod, idx) => (
-                <li
-                  key={idx}
-                  className={`p-4 rounded-xl shadow flex justify-between items-center border ${statusColor[prod.status]}`}
-                >
-                  <span>{prod.name}</span>
-                  <span className="capitalize font-semibold">{prod.status === 'new' ? 'Frisch' : prod.status === 'low' ? 'Geringer Bestand' : 'MHD bald'}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-pink-700 text-center">📦 Produktinfos</h2>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {productInfo.map((prod, idx) => (
+                  <li
+                    key={idx}
+                    className={`p-4 rounded-xl shadow flex justify-between items-center border ${statusColor[prod.status]}`}
+                  >
+                    <span>{prod.name}</span>
+                    <span className="capitalize font-semibold">{prod.status === 'new' ? 'Frisch' : prod.status === 'low' ? 'Geringer Bestand' : 'MHD bald'}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
