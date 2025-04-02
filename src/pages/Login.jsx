@@ -22,18 +22,22 @@ export default function Login({ onLogin }) {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FFE1FF] font-baloo">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl shadow-md w-96">
-        <div className="flex justify-center mb-4">
-          <img src="https://kingcandy-shop.de/wp-content/uploads/2020/11/logo.svg" alt="KingCandy Logo" className="h-16" />
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <div className="flex justify-center mb-6">
+          <img
+            src="https://kingcandy-shop.de/wp-content/uploads/2020/11/logo.svg"
+            alt="KingCandy Logo"
+            className="h-14"
+          />
         </div>
-        <h2 className="text-2xl font-bold text-center text-pink-700 mb-4">Login</h2>
-        {error && <p className="mb-4 text-sm text-center text-red-600">{error}</p>}
+        <h2 className="text-2xl font-extrabold text-pink-700 mb-6">Willkommen zurück 🍬</h2>
+        {error && <p className="mb-4 text-sm text-red-600">{error}</p>}
         <input
           type="text"
           placeholder="Benutzername"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full border p-2 mb-2 rounded"
+          className="w-full border border-pink-300 p-3 mb-3 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400"
           required
         />
         <input
@@ -41,10 +45,13 @@ export default function Login({ onLogin }) {
           placeholder="Passwort"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border p-2 mb-4 rounded"
+          className="w-full border border-pink-300 p-3 mb-6 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400"
           required
         />
-        <button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded transition">
+        <button
+          type="submit"
+          className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-full transition shadow-md"
+        >
           Einloggen
         </button>
       </form>
