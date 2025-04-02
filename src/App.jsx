@@ -6,10 +6,11 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [page, setPage] = useState('admin');
 
-  const handleLogin = (newToken) => {
-    localStorage.setItem('token', newToken);
-    setToken(newToken);
-  };
+const handleLogin = (newToken) => {
+  localStorage.setItem('token', newToken);
+  setToken(newToken);
+  setPage('admin'); // ✅ Seite wechseln nach Login
+};
 
   const handleLogout = () => {
     localStorage.removeItem('token');
